@@ -14,6 +14,8 @@
 int main(void) {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
+	
+	// ну типо изменила я что-то в программе этим комментарием, ок да?
 
 	int a, b, f;
 	f = 0;
