@@ -48,6 +48,7 @@ int main(void) {
 	case 2:
 		c = a - b;
 		printf("result: %d", c);
+		break;
 	case 3:
 		c = a * b;
 		printf("result: %d", c);
@@ -68,8 +69,7 @@ int main(void) {
 		}
 		printf("result: %d", a);
 		break;
-	default:
-		printf("Input Error\n");
+
 	}
 
 	return 0;
