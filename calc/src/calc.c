@@ -18,10 +18,15 @@ int main(void) {
 	// ну типо изменила я что-то в программе этим комментарием, ок да?
 	// +коммент с гита
 
-	int a, b, f;
-	f = 0;
+	int r = 1;
+
+ while (r != 0) {
+	float a, b;
 	printf("enter the first number:");
-	scanf("%d", &a);
+	scanf("%f", &a);
+
+    int f;
+    f = 0;
 
 	int k;
 	printf("1 - \"+\"\n2 - \"-\"\n3 - \"*\"\n4 - \"/\"\n5 - \"!\"\n6 - \"**\"\n");
@@ -38,22 +43,23 @@ int main(void) {
 	}
 	if (k != 5) {
 		printf("enter the second number: ");
-		scanf("%d", &b);
+		scanf("%f", &b);
 	}
 
-	int c;
+	float c;
 	float d;
 	switch (k) {
 	case 1:
 		c = a + b;
-		printf("result: %d", c);
+		printf("result: %f", c);
 		break;
 	case 2:
 		c = a - b;
-		printf("result: %d", c);
+		printf("result: %f", c);
+		break;
 	case 3:
 		c = a * b;
-		printf("result: %d", c);
+		printf("result: %f", c);
 		break;
 	case 4:
 		d = a / b;
@@ -63,17 +69,22 @@ int main(void) {
 		c = 1;
 		for (int i = 1; i <= a; i++)
 			c = c * i;
-		printf("result: %d", c);
+		printf("result: %f", c);
 		break;
 	case 6:
-		for (int i = 2; i <= b; i++) {
-			a = a * a;
-		}
-		printf("result: %d", a);
-		break;
-	default:
-		printf("Input Error\n");
-	}
+		for (int i = 2; i < b; i++) {
+			a = a * a; }
+		printf("result: %f", a);
+		break; }
+
+
+		printf ("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
+		scanf ("%d", &r);
+
+		if (r == 0)	{
+			printf ("exit");
+			break;  }
+ }
 
 	return 0;
 }
