@@ -67,8 +67,9 @@ int main(void) {
 		printf("result: %d", c);
 		break;
 	case 6:
+		c = a;
 		for (int i = 2; i <= b; i++) {
-			a = a * a;
+			a = a * c;
 		}
 		printf("result: %d", a);
 		break;
