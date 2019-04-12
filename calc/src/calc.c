@@ -14,9 +14,6 @@
 int main(void) {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
-	
-	// ну типо изменила я что-то в программе этим комментарием, ок да?
-	// +коммент с гита
 
 	int a, b, f;
 	f = 0;
@@ -31,8 +28,7 @@ int main(void) {
 		if (k > 0 && k < 7)
 			f = 1;
 		else {
-			printf(
-					"Operation does not exist. Select an operation from the list: ");
+			printf("Operation does not exist. Select an operation from the list: ");
 			scanf("%d", &k);
 		}
 	}
@@ -75,6 +71,6 @@ int main(void) {
 		break;
 
 	}
-
+//kill me please
 	return 0;
 }
