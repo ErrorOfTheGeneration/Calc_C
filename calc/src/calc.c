@@ -14,20 +14,13 @@
 int main(void) {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
-	
-	// ну типо изменила я что-то в программе этим комментарием, ок да?
-	// +коммент с гита
-
 	int r = 1;
-
  while (r != 0) {
 	float a, b;
 	printf("enter the first number:");
 	scanf("%f", &a);
-
     int f;
     f = 0;
-
 	int k;
 	printf("1 - \"+\"\n2 - \"-\"\n3 - \"*\"\n4 - \"/\"\n5 - \"!\"\n6 - \"**\"\n");
 	puts("select operation: ");
@@ -36,8 +29,7 @@ int main(void) {
 		if (k > 0 && k < 7)
 			f = 1;
 		else {
-			printf(
-					"Operation does not exist. Select an operation from the list: ");
+			printf("Operation does not exist. Select an operation from the list: ");
 			scanf("%d", &k);
 		}
 	}
@@ -45,7 +37,6 @@ int main(void) {
 		printf("enter the second number: ");
 		scanf("%f", &b);
 	}
-
 	float c;
 	float d;
 	switch (k) {
@@ -76,8 +67,6 @@ int main(void) {
 			a = a * a; }
 		printf("result: %f", a);
 		break; }
-
-
 		printf ("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
 		scanf ("%d", &r);
 
@@ -85,6 +74,5 @@ int main(void) {
 			printf ("exit");
 			break;  }
  }
-
 	return 0;
 }
