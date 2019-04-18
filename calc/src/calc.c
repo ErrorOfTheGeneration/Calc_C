@@ -54,6 +54,7 @@ while (s == 0) { //вот, пжл, этот самый "щелчок", здрасте
 		printf ("result: %f", &v);
 		break;
 	}
+	return 0;
 		}
 int calc (void) {
 
@@ -119,6 +120,7 @@ int calc (void) {
 		if (r == 0)	{
 			printf ("exit");
 			break;  }
+		return 0;
 	}
 }
  int main(void)
@@ -130,12 +132,7 @@ int calc (void) {
 		int ch;
 		printf ("1 - vect_calc\n2 - calc");
 		scanf("%i", &ch);
-		if (i == 1)  // написать: выполн€й код дл€ векторного калькул€тора
-		if (i == 2) // вып дл€ нормального
-		else (
-				printf("enter operation from list:");
-				scanf ("%i", ch);
-				)
- }
-	return 0;
-}
+		if (ch == 1) vektor_calc();
+		else calc ();
+return 0; }
+
