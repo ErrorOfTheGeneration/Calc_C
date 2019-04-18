@@ -10,18 +10,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-int choise (void) {
-	printf ("what calculator to open?");
-	int ch;
-	printf ("1 - vect_calc\n2 - calc");
-	scanf("%i", &ch);
-	if (i == 1)  // написать: выполн€й код дл€ векторного калькул€тора
-	if (i == 2) // вып дл€ нормального
-	else (
-			printf("enter operation from list:");
-			scanf ("%i", ch);
-			)
-}
 
 float vektor_calc (void) {
 
@@ -67,10 +55,7 @@ while (s == 0) { //вот, пжл, этот самый "щелчок", здрасте
 		break;
 	}
 		}
- int main(void)
- {
-	setvbuf(stdout, NULL, _IONBF, 0);
-	setvbuf(stderr, NULL, _IONBF, 0);
+int calc (void) {
 
 	int f; //где f - "щелчок", дающий сигнал, призывающий программу работать
 	f = 0;
@@ -130,10 +115,27 @@ while (s == 0) { //вот, пжл, этот самый "щелчок", здрасте
 		printf ("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
 		scanf ("%d", &r);
 	}
-//kill me please
+
 		if (r == 0)	{
 			printf ("exit");
 			break;  }
+	}
+}
+ int main(void)
+ {
+	setvbuf(stdout, NULL, _IONBF, 0);
+	setvbuf(stderr, NULL, _IONBF, 0);
+
+	printf ("what calculator to open?");
+		int ch;
+		printf ("1 - vect_calc\n2 - calc");
+		scanf("%i", &ch);
+		if (i == 1)  // написать: выполн€й код дл€ векторного калькул€тора
+		if (i == 2) // вып дл€ нормального
+		else (
+				printf("enter operation from list:");
+				scanf ("%i", ch);
+				)
  }
 	return 0;
 }
