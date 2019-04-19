@@ -11,128 +11,140 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float vektor_calc (void) {
-
-	int s = 0; // s - "щелчок", дающий программе сигнал о начале работы
-	int t = 1; // t  - типа r (см.далее)
-	while ( t != 0) {
+float vektor_calc(void) {
+	int s = 0; // s - "пїЅпїЅпїЅпїЅпїЅпїЅ", пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	int t = 1; // t  - пїЅпїЅпїЅпїЅ r (пїЅпїЅ.пїЅпїЅпїЅпїЅпїЅ)
+	while (t != 0) {
 		float x1, y1;
-		printf ("enter \"x1\"");
-		printf ("enter \"y1\"");
+		printf("enter \"x1\"");
+		printf("enter \"y1\"");
 		scanf("%f", &x1);
 		scanf("%f", &y1);
 
-		int o; // о - операция, выполняемая с векторами
-printf("1 - summa\n2 - raznost\n3 - vect_umnozhenie");
-puts("select operation:");
-scanf("%i", &o);
-while (s == 0) { //вот, пжл, этот самый "щелчок", здрасте
-		if (o > 0 && o < 4)
-			s = 1;
-		else {
-			printf("Operation does not exist. Select an operation from the list: ");
-			scanf("%d", &o); }
+		int o; // пїЅ - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		printf("1 - summa\n2 - raznost\n3 - vect_umnozhenie");
+		puts("select operation:");
+		scanf("%i", &o);
+		while (s == 0) { //пїЅпїЅпїЅ, пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅ", пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if (o > 0 && o < 4)
+				s = 1;
+			else {
+				printf(
+						"Operation does not exist. Select an operation from the list: ");
+				scanf("%d", &o);
+			}
+		}
+		float x2, y2;
+		printf("enter \"x2\"");
+		printf("enter \"y2\"");
+		scanf("%f", &x2);
+		scanf("%f", &y2);
 
-	float x2, y2;
-	printf ("enter \"x2\"");
-	printf ("enter \"y2\"");
-	scanf("%f", &x2);
-	scanf("%f", &y2);
+		switch (o) {
+		case 1:
+			printf("result: %f %f", x1 + x2, y1 + y2);
+			break;
+		case 2:
+			printf("result: %f %f", x1 - x2, y1 - y2);
+			break;
+		case 3:
+			printf("result: %f", x1 * x2 + y1 * y2);
+			break;
+		}
+		printf("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
+		scanf("%d", &t);
+	}
+	if (t == 0) {
+			printf("exit");
+		}
 
-	float v, w;
-	switch (o) {
-	case 1:
-		v = (x1 + x2, y1 + y2);
-		printf ("result: %f", &v);
-		break;
-	case 2:
-		v = (x1 - x2, y1 - y2);
-		printf ("result: %f", &v);
-		break;
-	case 3:
-		v = (x1 * x2, y1 * y2);
-		printf ("result: %f", &v);
-		break;
+	return 0;
+}
+
+int calc(void) {
+	int f; //пїЅпїЅпїЅ f - "пїЅпїЅпїЅпїЅпїЅпїЅ", пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	f = 0;
+	int r = 1; //r - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
+	while (r != 0) {
+		float a, b;
+		printf("enter the first number:");
+		scanf("%f", &a);
+		int k; // k - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		printf(
+				"1 - \"+\"\n2 - \"-\"\n3 - \"*\"\n4 - \"/\"\n5 - \"!\"\n6 - \"**\"\n");
+		puts("select operation: ");
+		scanf("%d", &k);
+		while (f == 0) { //пїЅпїЅпїЅ, пїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅ", пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+			if (k > 0 && k < 7)
+				f = 1;
+			else {
+				printf(
+						"Operation does not exist. Select an operation from the list: ");
+				scanf("%d", &k);
+			}
+		}
+		if (k != 5) {
+			printf("enter the second number: ");
+			scanf("%f", &b);
+		}
+		float c;
+		float d;
+		switch (k) {
+		case 1:
+			c = a + b;
+			printf("result: %f", c);
+			break;
+		case 2:
+			c = a - b;
+			printf("result: %f", c);
+			break;
+		case 3:
+			c = a * b;
+			printf("result: %f", c);
+			break;
+		case 4:
+			d = a / b;
+			printf("result: %f", d);
+			break;
+		case 5:
+			c = 1;
+			for (int i = 1; i <= a; i++)
+				c = c * i;
+			printf("result: %f", c);
+			break;
+		case 6:
+			c = a;
+			for (int i = 2; i <= b; i++) {
+				a = a * c;
+			}
+			printf("result: %f", a);
+			break;
+			printf(
+					"\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
+			scanf("%d", &r);
+		}
+
+		if (r == 0) {
+			printf("exit");
+			break;
+		}
 	}
 	return 0;
-		}
-int calc (void) {
-
-	int f; //где f - "щелчок", дающий сигнал, призывающий программу работать
-	f = 0;
-	int r = 1; //r - переменная, позволяющая пользователю в конце программы выбрать, закрыть калькулятор или продолжить работу
- while (r != 0) {
-	float a, b;
-	printf("enter the first number:");
-	scanf("%f", &a);
-	int k; // k - переменная, обозначающая выбор операции
-	printf("1 - \"+\"\n2 - \"-\"\n3 - \"*\"\n4 - \"/\"\n5 - \"!\"\n6 - \"**\"\n");
-	puts("select operation: ");
-	scanf("%d", &k);
-	while (f == 0) { //вот, пжл, этот самый "щелчок", здрасте
-		if (k > 0 && k < 7)
-			f = 1;
-		else {
-			printf("Operation does not exist. Select an operation from the list: ");
-			scanf("%d", &k);
-		}
-	}
-	if (k != 5) {
-		printf("enter the second number: ");
-		scanf("%f", &b);
-	}
-	float c;
-	float d;
-	switch (k) {
-	case 1:
-		c = a + b;
-		printf("result: %f", c);
-		break;
-	case 2:
-		c = a - b;
-		printf("result: %f", c);
-		break;
-	case 3:
-		c = a * b;
-		printf("result: %f", c);
-		break;
-	case 4:
-		d = a / b;
-		printf("result: %f", d);
-		break;
-	case 5:
-		c = 1;
-		for (int i = 1; i <= a; i++)
-			c = c * i;
-		printf("result: %f", c);
-		break;
-	case 6:
-		c = a;
-		for (int i = 2; i <= b; i++) {
-			a = a * c;
-		}
-		printf("result: %f", a);
-		break;
-		printf ("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
-		scanf ("%d", &r);
-	}
-
-		if (r == 0)	{
-			printf ("exit");
-			break;  }
-		return 0;
-	}
 }
- int main(void)
- {
+int main(void) {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
 
-	printf ("what calculator to open?");
-		int ch;
-		printf ("1 - vect_calc\n2 - calc");
-		scanf("%i", &ch);
-		if (ch == 1) vektor_calc();
-		else calc ();
-return 0; }
+	printf("what calculator to open?");
+	int ch;
+	printf("\n1 - vect_calc\n2 - calc");
+	scanf("%i", &ch);
+	if (ch == 1)
+		vektor_calc();
+	else if (ch == 2)
+		calc();
+	else
+		printf("You entered an incorrect number. The program is complete.");
+	return 0;
+}
 
