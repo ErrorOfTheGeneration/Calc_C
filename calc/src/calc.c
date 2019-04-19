@@ -12,20 +12,30 @@
 #include <stdlib.h>
 
 float vektor_calc(void) {
-	int s = 0; // s - "������", ������ ��������� ������ � ������ ������
-	int t = 1; // t  - ���� r (��.�����)
+	int t = 1; // t  - типа r (см. далее)
 	while (t != 0) {
-		float x1, y1;
-		printf("enter \"x1\"");
-		printf("enter \"y1\"");
-		scanf("%f", &x1);
-		scanf("%f", &y1);
+		int n; // n  -количество координат (n-мерное пространсктво)
+		printf("enter number of coorditates: ");
+		scanf("%i", &n);
+		float *vect1, *vect2;
+		vect1 = malloc(n * sizeof(float));
+		vect2 = malloc(n * sizeof(float));
 
-		int o; // � - ��������, ����������� � ���������
+		int s = 0; // s - щелчок, указывающий на начало работы
+		printf("enter the coordinates of the first vector: ");
+		for (int i = 0; i < n; i++) {
+			scanf("%f", &vect1[i]);
+		}
+		printf("enter the coordinates of the second vector: ");
+		for (int j = 0; j < n; j++) {
+			scanf("%f", &vect2[j]);
+		}
+
+		int o; // о - операция над векторами
 		printf("1 - summa\n2 - raznost\n3 - vect_umnozhenie");
 		puts("select operation:");
 		scanf("%i", &o);
-		while (s == 0) { //���, ���, ���� ����� "������", �������
+		while (s == 0) { //опа, вот этот "щелчок", здрасте
 			if (o > 0 && o < 4)
 				s = 1;
 			else {
@@ -34,29 +44,34 @@ float vektor_calc(void) {
 				scanf("%d", &o);
 			}
 		}
-		float x2, y2;
-		printf("enter \"x2\"");
-		printf("enter \"y2\"");
-		scanf("%f", &x2);
-		scanf("%f", &y2);
 
+		float sum = 0;
 		switch (o) {
 		case 1:
-			printf("result: %f %f", x1 + x2, y1 + y2);
+			printf("result: ");
+			for (int i = 0; i < n; i++) {
+				printf("%.0f ", vect1[i] + vect2[i]);
+			}
 			break;
 		case 2:
-			printf("result: %f %f", x1 - x2, y1 - y2);
+			printf("result: ");
+			for (int i = 0; i < n; i++) {
+				printf("%.0f ", vect1[i] - vect2[i]);
+			}
 			break;
 		case 3:
-			printf("result: %f", x1 * x2 + y1 * y2);
+			printf("result: ");
+			for (int i = 0; i < n; i++) {
+				sum = sum + (vect1[i] * vect2[i]);
+			}
+			printf("%.0f", sum);
 			break;
 		}
-		printf("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
+		printf(
+				"\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
 		scanf("%d", &t);
 	}
-	if (t == 0) {
-			printf("exit");
-		}
+	printf("exit");
 
 	return 0;
 }
@@ -120,14 +135,11 @@ int calc(void) {
 			printf("result: %f", a);
 			break;
 		}
-		printf("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
+		printf(
+				"\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
 		scanf("%d", &r);
-
-		if (r == 0) {
-			printf("exit");
-			break;
-		}
 	}
+	printf("exit");
 	return 0;
 }
 int main(void) {
