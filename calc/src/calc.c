@@ -77,9 +77,9 @@ float vektor_calc(void) {
 }
 
 int calc(void) {
-	int f; //��� f - "������", ������ ������, ����������� ��������� ��������
+	int f;
 	f = 0;
-	int r = 1; //r - ����������, ����������� ������������ � ����� ��������� �������, ������� ����������� ��� ���������� ������
+	int r = 1;
 	while (r != 0) {
 		float a, b;
 		printf("enter the first number:");
@@ -89,7 +89,7 @@ int calc(void) {
 				"1 - \"+\"\n2 - \"-\"\n3 - \"*\"\n4 - \"/\"\n5 - \"!\"\n6 - \"**\"\n");
 		puts("select operation: ");
 		scanf("%d", &k);
-		while (f == 0) { //���, ���, ���� ����� "������", �������
+		while (f == 0) {
 			if (k > 0 && k < 7)
 				f = 1;
 			else {
@@ -146,7 +146,7 @@ int main(void) {
 	setvbuf(stdout, NULL, _IONBF, 0);
 	setvbuf(stderr, NULL, _IONBF, 0);
 
-	printf("what calculator to open?");
+	printf("what calculator to open? ");
 	int ch;
 	printf("\n1 - vect_calc\n2 - calc");
 	scanf("%i", &ch);
