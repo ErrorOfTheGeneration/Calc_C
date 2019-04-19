@@ -110,7 +110,7 @@ int calc(void) {
 			c = 1;
 			for (int i = 1; i <= a; i++)
 				c = c * i;
-			printf("result: %f", c);
+			printf("result: %.2f", c);
 			break;
 		case 6:
 			c = a;
@@ -119,10 +119,9 @@ int calc(void) {
 			}
 			printf("result: %f", a);
 			break;
-			printf(
-					"\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
-			scanf("%d", &r);
 		}
+		printf("\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
+		scanf("%d", &r);
 
 		if (r == 0) {
 			printf("exit");
