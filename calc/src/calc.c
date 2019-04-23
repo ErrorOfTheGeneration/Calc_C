@@ -70,6 +70,8 @@ float vektor_calc(void) {
 		printf(
 				"\nDo you want to continue working with the program? \nenter 1 (yes) or 0 (no)");
 		scanf("%d", &t);
+	free(vect1);
+	free(vect2);
 	}
 	printf("exit");
 
